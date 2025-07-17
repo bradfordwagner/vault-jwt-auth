@@ -8,11 +8,11 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use: "testcli",
+	Use: "vja",
 }
 
 func init() {
-	rootCmd.AddCommand(myVerb)
+	rootCmd.AddCommand(entraVerb)
 }
 
 func main() {
