@@ -20,8 +20,43 @@ Flags:
       --azure_devops_variable string   variable to set in azure devops (env=AZURE_DEVOPS_VARIABLE) (default "VAULT_TOKEN")
   -h, --help                           help for entra
   -o, --output_method string           output method to use for logging (env=OUTPUT_METHOD) (default "azuredevops")
+  -v, --verbose                        enable verbose output (displays token information in YAML format)
   -a, --vault_auth_endpoint string     vault to log into entra with (env=VAULT_AUTH_ENDPOINT)
   -r, --vault_auth_role string         vault role to log into entra with (env=VAULT_AUTH_ROLE)
+```
+
+## Verbose Mode
+
+Enable verbose mode to see detailed token information after successful authentication:
+
+```bash
+vja entra -v
+```
+
+This will display token metadata in alphabetically ordered YAML format, including:
+- Token accessor
+- Policies
+- TTL and expiration times
+- Entity ID
+- Metadata
+- And more (token value is redacted for security)
+
+Example output:
+```yaml
+=== Token Information ===
+accessor: hmac-sha256:a1b2c3d4...
+creation_time: 2026-03-04T11:47:38Z
+creation_ttl: 3600
+display_name: jwt-my_role
+entity_id: c30886d4-df27-f9b0-b8c6-7b9c4c3b4701
+expire_time: 2026-03-04T12:47:38Z
+id: <redacted>
+policies:
+  - default
+  - read_secrets
+renewable: true
+ttl: 3600
+========================
 ```
 
 ## From a docker container
