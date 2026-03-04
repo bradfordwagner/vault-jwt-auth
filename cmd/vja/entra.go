@@ -16,6 +16,7 @@ func init() {
 	flag_helper.CreateFlag(fs, &entraArgs.TenantId, "arm_tenant_id", "t", "", "tenant id to log into entra with (env=ARM_TENANT_ID)")
 	flag_helper.CreateFlag(fs, &entraVaultArgs.AuthEndpoint, "vault_auth_endpoint", "a", "", "vault to log into entra with (env=VAULT_AUTH_ENDPOINT)")
 	flag_helper.CreateFlag(fs, &entraVaultArgs.AuthRole, "vault_auth_role", "r", "", "vault role to log into entra with (env=VAULT_AUTH_ROLE)")
+	flag_helper.CreateFlag(fs, &entraArgs.Verbose, "verbose", "v", false, "enable verbose logging for authentication")
 	// output
 	flag_helper.CreateFlag(fs, &outputArgs.Method, "output_method", "o", "azuredevops", "output method to use for logging (env=OUTPUT_METHOD)")
 	flag_helper.CreateFlag(fs, &outputArgs.AzureDevops.Variable, "azure_devops_variable", "", "VAULT_TOKEN", "variable to set in azure devops (env=AZURE_DEVOPS_VARIABLE)")

@@ -9,3 +9,9 @@ tasks:
       - goreleaser build --snapshot --clean
       - tree dist
     silent: true
+
+  install:
+    desc: Install vja binary to $GOPATH/bin
+    cmds:
+      - go install ./cmd/vja
+    silent: false

@@ -36,10 +36,11 @@ func Run(args args.Entra) (err error) {
 	l.Info("entra login successful")
 
 	// jwt login to vault
-	token, err := vault_jwt_login.Login(ctx, vault_jwt_login.Args{
+	token, _, err := vault_jwt_login.Login(ctx, vault_jwt_login.Args{
 		AuthEndpoint: args.Vault.AuthEndpoint,
 		Role:         args.Vault.AuthRole,
 		Jwt:          jwt,
+		Verbose:      args.Verbose,
 	})
 	if err != nil {
 		return err
