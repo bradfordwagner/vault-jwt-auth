@@ -7,12 +7,11 @@ import (
 	"strings"
 
 	"github.com/bradfordwagner/go-util/log"
-	"github.com/hashicorp/vault-client-go"
 	"gopkg.in/yaml.v3"
 )
 
 // LookupAndDisplay performs a token lookup and displays the result as alphabetically ordered YAML
-func LookupAndDisplay(ctx context.Context, client *vault.Client, token string) error {
+func LookupAndDisplay(ctx context.Context, client VaultClient, token string) error {
 	// Set the token on the client for lookup
 	if err := client.SetToken(token); err != nil {
 		log.Log().With("error", err.Error()).Error("failed to set token on client")
@@ -49,7 +48,7 @@ func LookupAndDisplay(ctx context.Context, client *vault.Client, token string) e
 	// Output to stdout
 	fmt.Println("\n=== Token Information ===")
 	fmt.Println(yamlOutput)
-	fmt.Println("========================\n")
+	fmt.Println("========================")
 
 	return nil
 }

@@ -41,3 +41,10 @@ This is a Vault JWT authentication tool (`vault-jwt-auth`) that:
 - **Build Command**: Use `go install ./cmd/vja` instead of `go build`
   - This installs the binary to `$GOPATH/bin` so `vja` can be run directly from anywhere
   - Easier for integration testing and local development
+
+- **Testing Framework**: Use Ginkgo + Gomega for all tests
+  - Ginkgo: BDD-style testing framework (`github.com/onsi/ginkgo/v2`)
+  - Gomega: Matcher library for assertions (`github.com/onsi/gomega`)
+  - Test files should follow the `*_test.go` naming convention
+  - Use Ginkgo's `Describe`, `Context`, `It` blocks for test organization
+  - Use Gomega's `Expect()` for assertions
