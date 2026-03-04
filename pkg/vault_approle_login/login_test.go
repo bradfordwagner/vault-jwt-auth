@@ -1,7 +1,6 @@
 package vault_approle_login_test
 
 import (
-	"context"
 	"testing"
 
 	. "github.com/onsi/ginkgo/v2"
@@ -17,12 +16,10 @@ func TestVaultApproleLogin(t *testing.T) {
 
 var _ = Describe("Login", func() {
 	var (
-		ctx  context.Context
 		args vault_approle_login.Args
 	)
 
 	BeforeEach(func() {
-		ctx = context.Background()
 		args = vault_approle_login.Args{
 			VaultAddress: "http://localhost:8200",
 			AuthEndpoint: "auth/approle/test",
