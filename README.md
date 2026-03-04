@@ -1,6 +1,11 @@
 # vault-jwt-auth
 - Used to login to a given provider then auth against vault
 
+## Installation
+```bash
+go install github.com/bradfordwagner/vault-jwt-auth/cmd/vja@latest
+```
+
 ## Usage
 ```bash
 logs microsoft entra
