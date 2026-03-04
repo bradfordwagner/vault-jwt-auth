@@ -1,6 +1,6 @@
 module github.com/bradfordwagner/vault-jwt-auth
 
-go 1.26
+go 1.25
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.18.0
